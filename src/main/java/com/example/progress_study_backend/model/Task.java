@@ -13,7 +13,7 @@ import jakarta.persistence.Table;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "USER")
+@Table(name = "TASK")
 public class Task {
 
     @Id
@@ -30,7 +30,6 @@ public class Task {
     @Column(name = "DESCRIPTION", nullable = false)
     private String description;
 
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy HH:mm:ss")
     @Column(name = "CREATED_AT", nullable = false)
     private LocalDateTime createdAt;
 
