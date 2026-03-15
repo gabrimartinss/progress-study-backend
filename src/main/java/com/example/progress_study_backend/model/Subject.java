@@ -25,7 +25,7 @@ public class Subject {
     private String name;
 
     @Column(name = "DESCRIPTION", nullable = false)
-    private boolean description;
+    private String description;
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy HH:mm:ss")
     @Column(name = "CREATED_AT", nullable = false)
@@ -34,14 +34,6 @@ public class Subject {
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false, updatable = false)
     private User user;
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
 
     public Long getId() {
         return id;
@@ -59,11 +51,11 @@ public class Subject {
         this.name = name;
     }
 
-    public boolean isDescription() {
+    public String getDescription() {
         return description;
     }
 
-    public void setDescription(boolean description) {
+    public void setDescription(String description) {
         this.description = description;
     }
 
@@ -73,5 +65,13 @@ public class Subject {
 
     public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

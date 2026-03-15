@@ -10,7 +10,7 @@ import java.util.List;
 
 @Repository
 public interface TaskRepository extends JpaRepository<Task, Long> {
-    @Query(value = "SELECT new com.example.progress_study_backend.dto.TaskDTO(task.title, task.createdAt) " +
+    @Query(value = "SELECT new com.example.progress_study_backend.dto.TaskDTO(task.name, task.createdAt) " +
             "FROM Task task " +
             "ORDER BY task.createdAt DESC")
     List<TaskDTO> findCreatedAt();
