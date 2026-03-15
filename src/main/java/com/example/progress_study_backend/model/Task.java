@@ -21,17 +21,20 @@ public class Task {
     @Column
     private Long id;
 
-    @Column(name = "TITLE", nullable = false)
-    private String title;
+    @Column(name = "NAME", nullable = false)
+    private String name;
 
     @Column(name = "STATUS", nullable = false)
-    private Boolean email;
+    private Boolean status;
 
     @Column(name = "DESCRIPTION", nullable = false)
     private String description;
 
     @Column(name = "CREATED_AT", nullable = false)
     private LocalDateTime createdAt;
+
+    @Column(name = "TIME_SCREEN", nullable = false)
+    private Long timeScreen;
 
     @ManyToOne
     @JoinColumn(name = "SUBJECT_ID", nullable = false)
@@ -45,20 +48,20 @@ public class Task {
         this.id = id;
     }
 
-    public String getTitle() {
-        return title;
+    public String getName() {
+        return name;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public Boolean getEmail() {
-        return email;
+    public Boolean getStatus() {
+        return status;
     }
 
-    public void setEmail(Boolean email) {
-        this.email = email;
+    public void setStatus(Boolean status) {
+        this.status = status;
     }
 
     public String getDescription() {
@@ -75,6 +78,14 @@ public class Task {
 
     public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public Long getTimeScreen() {
+        return timeScreen;
+    }
+
+    public void setTimeScreen(Long timeScreen) {
+        this.timeScreen = timeScreen;
     }
 
     public Subject getSubject() {
